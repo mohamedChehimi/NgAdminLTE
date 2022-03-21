@@ -1,0 +1,22 @@
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <!-- Add icons to the links using the .nav-icon class
+       with font-awesome or any other icon font library -->
+  <li *ngFor="let item of configs" class="nav-item">
+    <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-tachometer-alt"></i>
+      <p>
+        {{item.text}}
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul *ngIf="item.children" class="nav nav-treeview">
+      <li  *ngFor="let subItem of item.children" class="nav-item">
+        <a [href]="subItem.link" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>{{subItem.text}}</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+

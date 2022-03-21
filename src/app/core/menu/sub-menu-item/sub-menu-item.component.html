@@ -1,0 +1,16 @@
+<ng-container>
+  <ul class="nav nav-treeview">
+    <li *ngFor="let mItem of configs"  class="nav-item">
+      <a href="./index.html" class="nav-link">
+        <i *ngIf="mItem.decoration" [classList]="mItem.decoration" class="nav-icon"></i>
+        <p>
+          {{mItem.text}}
+          <i  class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ng-container *ngIf="mItem.children as config">
+        <app-sub-menu-item [configs]="config"></app-sub-menu-item>
+      </ng-container>
+    </li>
+  </ul>
+</ng-container>

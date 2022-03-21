@@ -1,0 +1,11 @@
+<app-datatable  [columnsDefinition]="columns" [dataSrc]="githubTracker" [itemTemplate]="itemTemplate">
+  <ng-template let-item #itemTemplate>
+    <div *ngIf="item.column==='created_at'">{{item.row['created_at']|date}}</div>
+    <div *ngIf="item.column==='number'">{{item.row['number']}}</div>
+    <div *ngIf="item.column==='state'">{{item.row['state']}}</div>
+    <div *ngIf="item.column==='title'">{{item.row['title']}}</div>
+  </ng-template>
+</app-datatable>
+
+
+
